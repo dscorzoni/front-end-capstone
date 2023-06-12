@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap');
+
+* {
+    --primary-color-green: #495E57;
+    --primary-color-yellow: #F4CE14;
+    --secondary-color-1: #EE9972;
+    --secondary-color-2: #FBDABB;
+    --highlight-color-1: #EDEFEE;
+    --highlight-color-2: #333333;
+
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Karla', sans-serif;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 450px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+}
+
+ul a {
+    text-decoration: none;
+    font-family: Karla;
+    font-weight: 700;
+    color: var(--primary-color-green);
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--primary-color-green);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    color: var(--highlight-color-1);
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+.social-media-icons a {
+    text-decoration: none;
+    color: var(--highlight-color-1);
+}
+
+footer h1 {
+    font-size: 18px;
+    line-height: 0.5rem;
+}
+
+footer p {
+    font-size: 15px;
+    line-height: 0.5rem;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+
