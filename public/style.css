@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap');
 
+/* General Settings */
 * {
     --primary-color-green: #495E57;
     --primary-color-yellow: #F4CE14;
@@ -9,7 +10,6 @@
     --highlight-color-2: #333333;
 
 }
-
 
 html, body {
     margin: 0;
@@ -21,6 +21,15 @@ html, body {
     font-family: 'Karla', sans-serif;
 }
 
+h1, h2 {
+    margin: 0;
+    font-family: 'Markazi-Text', serif;
+}
+
+p {
+    font-size: 1.2rem;
+    font-family: 'Karla', sans-serif;
+}
 
 /* Header */
 
@@ -38,7 +47,7 @@ header {
     padding: 1rem;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 700px) {
     header .container {
         flex-direction: column;
         align-items: center;
@@ -86,7 +95,7 @@ footer .container {
     align-items: center;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 700px) {
     footer .container {
         flex-direction: column;
         align-items: center;
@@ -121,3 +130,278 @@ footer p {
 }
 
 
+
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color-green);
+}
+
+.hero .container {
+    padding: 2rem;
+}
+
+.hero-content {
+    color: var(--highlight-color-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    margin: 2rem 0rem 2rem 0rem;
+
+}
+
+.hero-image {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.hero-cta {
+    background-color: var(--highlight-color-2);
+    width: 200px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: var(--highlight-color-1);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.5s;
+    font-weight: 800;
+}
+
+.hero-cta:hover {
+    background-color: var(--primary-color-yellow);
+    color: var(--primary-color-green);
+}
+
+@media screen and (max-width: 700px) {
+    .hero .container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-image {
+        margin-top: 1rem;
+    }
+}
+
+
+
+/* Specials Section */
+
+.specials {
+    display: flex;
+    justify-content: center;
+}
+
+.specials .container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.specials-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.dish-image {
+    width: 250px;
+    height: 165px;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.specials-card-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.specials-card {
+    max-width: 250px;
+    background-color: var(--secondary-color-2);
+    border-radius: 0.5rem;
+    padding: 0;
+    margin: auto;
+}
+
+.specials-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.specials-card-header h3 {
+    margin: 0;
+}
+
+.specials-dish-price {
+    color: var(--primary-color-green);
+    font-weight: 700;
+}
+
+.specials-dish-description {
+    padding: 1rem;
+    font-size: 15px;
+    margin: 0 0 1rem 0;
+    font-family: 'Karla', serif;
+}
+
+.view-menu-button {
+    background-color: var(--highlight-color-2);
+    font-family: 'Karla';
+    width: 150px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: var(--highlight-color-1);
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.5s;
+    font-weight: 800;
+}
+
+.view-menu-button:hover {
+    background-color: var(--primary-color-yellow);
+    color: var(--primary-color-green);
+}
+
+
+/* Testimonials Section */
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color-green);
+    color: var(--highlight-color-1);
+    padding-bottom: 2rem;
+}
+
+.testimonials .container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials-list {
+    display: flex;
+    width: 100%;
+    margin: 0rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.testimonial-card {
+    max-width: 150px;
+    background-color: var(--highlight-color-1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: auto;
+    color: var(--highlight-color-2);
+}
+
+@media screen and (max-width: 700px) {
+    .testimonials-list {
+        align-items: stretch;
+    }
+    
+    .testimonial-card {
+        max-width: 120px;
+    }
+}
+
+.testimonials h1 {
+    margin: 1rem;
+}
+
+.testimonials-list h2 {
+    font-size: 1.2rem;
+}
+
+.testimonial-card img {
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+
+.testimonial-stars {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.star-icon {
+    color: var(--primary-color-yellow);
+}
+
+.testimonial-review {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
+
+/* About Section */
+
+.home-about {
+    background-color: var(--highlight-color-1);
+    display: flex;
+    justify-content: center;
+}
+
+.home-about .container {
+    padding: 1rem;
+    display: flex;
+    width: 100%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
+}
+
+.about-content p {
+    font-size: 1rem;
+}
+
+.about-images {
+    display: flex;
+    gap: 1rem;
+}
+
+.about-images img {
+    width: 200px;
+}
+
+.img-mario-adrian {
+    object-fit: cover;
+    object-position: 80%;
+}

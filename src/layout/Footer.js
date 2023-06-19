@@ -1,4 +1,4 @@
-import Logo from './assets/littlelemon_footer.png';
+import Logo from '../assets/littlelemon_footer.png';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 
 function Footer() {
