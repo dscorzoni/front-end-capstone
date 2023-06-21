@@ -1,33 +1,53 @@
 /*import { useState } from 'react';*/
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { submitAPI } from '../components/ApiMockup';
 
-// All Reservation Form
 function ReservationForm({formFields, setFormFields, initializeTimes, availableTimes, availableTimesDispatch}) {
+
+    const [errorMessage, setErrorMessage] = useState("");
 
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formFields);
-        setFormFields({...formFields, 
-            first_name: "",
-            phone: "",
-            date: "",
-            time: "",
-            guests: 0,
-            occasion: "Birthday"});
-            availableTimesDispatch("initialize");
 
-        if (submitAPI(formFields)) {
-            navigate("/reservation_success");
+        // Validating Form
+
+        if (formFields.first_name.length > 0 & 
+            formFields.phone.length > 0 & 
+            formFields.date.length > 0 & 
+            formFields.time.length > 0 &
+            formFields.guests > 0 &
+            formFields.occasion.length > 0
+            ) {
+            if (submitAPI(formFields)) {
+                setFormFields({...formFields, 
+                    first_name: "",
+                    phone: "",
+                    date: "",
+                    time: "",
+                    guests: 0,
+                    occasion: "Birthday"});
+                    availableTimesDispatch("initialize");
+                navigate("/reservation_success");
+            }
+        } else {
+            setErrorMessage("Please enter all the fields to reserve a table.");
         }
+
+
+
+
+
+
     }
 
     const pickDayHandler = (e) => {
         setFormFields({...formFields, date: e.target.value})
     }
+
 
     useEffect(() => {
         availableTimesDispatch(new Date(formFields.date));
@@ -38,11 +58,11 @@ function ReservationForm({formFields, setFormFields, initializeTimes, availableT
         <form className="reservation-form" onSubmit={handleSubmit}>
         <div className="field-group">
             <label htmlFor="res-name">Your name:</label>
-            <input required type="text" id="res-name" value={formFields.first_name} onChange={(e) => setFormFields({...formFields, first_name: e.target.value})} />
+            <input type="text" id="res-name" value={formFields.first_name} onChange={(e) => setFormFields({...formFields, first_name: e.target.value})} />
         </div>
         <div className="field-group">
             <label htmlFor="res-phone">Your phone:</label>
-            <input required type="text" id="res-phone" value={formFields.phone} onChange={(e) => setFormFields({...formFields, phone: e.target.value})} />
+            <input type="text" id="res-phone" value={formFields.phone} onChange={(e) => setFormFields({...formFields, phone: e.target.value})} />
         </div>
         <div className="field-group">
             <label htmlFor="res-date">Choose date</label>
@@ -52,11 +72,11 @@ function ReservationForm({formFields, setFormFields, initializeTimes, availableT
             <label htmlFor="res-time">Choose time</label>
             <select required id="res-time" data-testid="res-time" value={formFields.time} onChange={(e) => setFormFields({...formFields, time: e.target.value})}>
                 {
-                availableTimes.map((item) => {
-                    return(
-                        <option key={item}>{item}</option>
-                    )
-                })
+                    availableTimes.map((item) => {
+                        return(
+                            <option key={item}>{item}</option>
+                        )
+                    })
                 }
             </select>
         </div>
@@ -67,12 +87,13 @@ function ReservationForm({formFields, setFormFields, initializeTimes, availableT
         </div>
         <div className="field-group">
             <label htmlFor="occasion">Occasion</label>
-            <select required id="occasion" value={formFields.occasion} onChange={(e) => setFormFields({...formFields, occasion: e.target.value})}>
+            <select id="occasion" value={formFields.occasion} onChange={(e) => setFormFields({...formFields, occasion: e.target.value})}>
                 <option>Birthday</option>
                 <option>Anniversary</option>
                 <option>Other</option>
             </select>
         </div>
+        <div className="error-message">{errorMessage}</div>
         <input type="submit" className="reservation-button" value="Make Your Reservation" />
         </form>
     )

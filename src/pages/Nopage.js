@@ -1,9 +1,10 @@
 function Nopage() {
     const style = {
-        textAlign: "center"
+        textAlign: "center",
+        margin: 50
     }
     return(
-        <h1 style={style}>Not found</h1>
+        <h1 style={style}>Not Implemented</h1>
     )
 }
 

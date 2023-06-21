@@ -1,7 +1,5 @@
 import Layout from './layout/Layout';
-import Menu from './pages/Menu';
 import Homepage from './pages/Homepage';
-import About from './pages/About';
 import Nopage from './pages/Nopage';
 import Reservations from './pages/Reservations';
 import ReservationSuccess from './pages/ReservationSuccess';
@@ -43,8 +41,6 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="*" element={<Nopage />} />
             <Route path="/" element={<Homepage />} />
-            <Route path="about" element={<About />} />
-            <Route path="menu" element={<Menu />} />
             <Route path="reservations" element={<Reservations 
               formFields={formFields} 
               setFormFields={setFormFields} 
