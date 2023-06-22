@@ -94,7 +94,7 @@ function ReservationForm({formFields, setFormFields, initializeTimes, availableT
             </select>
         </div>
         <div className="error-message">{errorMessage}</div>
-        <input type="submit" className="reservation-button" value="Make Your Reservation" />
+        <input type="submit" className="reservation-button" data-testid="submit-button" value="Make Your Reservation" />
         </form>
     )
 }

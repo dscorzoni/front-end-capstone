@@ -22,3 +22,13 @@ test('Validate times list after picking a dat (updateTimes())', () => {
   fireEvent.change(dateField, {target: {value: "2023-06-30"}});
   expect(selectField.childNodes.length).toBe(6);
 })
+
+test('Checking for error message when missing information in the form', () => {
+  render(<App />);
+  const linkElement = screen.getByTestId("reservation-link");
+  fireEvent.click(linkElement);
+  const submitButton = screen.getByTestId("submit-button");
+  fireEvent.click(submitButton);
+  const errorMessage = screen.getByText("Please enter all the fields to reserve a table.")
+  expect(errorMessage).toBeInTheDocument;
+})

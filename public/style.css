@@ -208,6 +208,7 @@ footer p {
 .specials {
     display: flex;
     justify-content: center;
+    background-color: var(--highlight-color-1);
 }
 
 .specials .container {
@@ -338,6 +339,7 @@ footer p {
 
 .testimonials h1 {
     margin: 1rem;
+    font-size: 2rem;
 }
 
 .testimonials-list h2 {
@@ -386,6 +388,10 @@ footer p {
     display: flex;
     flex-direction: column;
     padding-right: 2rem;
+}
+
+.about-content h1 {
+    font-size: 3rem;
 }
 
 .about-content p {
@@ -483,6 +489,7 @@ input, select {
 
 .error-message {
     color: var(--secondary-color-1);
+    height: 30px;
 }
 
 @media screen and (max-width: 700px) {

@@ -29,7 +29,7 @@ function Specials() {
 
 
     return(
-        <div className="specials">
+        <section className="specials">
             <div className="container">
                 <div className="specials-header">
                     <h1>Specials</h1>
@@ -52,7 +52,7 @@ function Specials() {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

@@ -14,7 +14,7 @@ function Nav() {
 		  <Link to="/menu">Menu</Link>
         </li>
         <li>
-		  <Link to="/reservations">Reservations</Link>
+		  <Link to="/reservations" data-testid="reservation-link">Reservations</Link>
         </li>
         <li>
 		  <Link to="/order">Order Online</Link>

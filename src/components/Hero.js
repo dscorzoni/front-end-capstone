@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Hero() {
     return(
-        <div className="hero">
+        <section className="hero">
             <div className="container">
                 <div className="hero-content">
                     <h1>Little Lemon</h1>
@@ -13,7 +13,7 @@ function Hero() {
                 </div>
                 <img className="hero-image" alt="Chef preparing a salad" src={HeroImage} />
             </div>
-        </div>
+        </section>
     )
 }
 

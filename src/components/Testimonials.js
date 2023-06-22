@@ -30,7 +30,7 @@ function Testimonials() {
     ]
 
     return(
-        <div className="testimonials">
+        <section className="testimonials">
             <div className="container">
                 <h1>Testimonials</h1>
                 <div className="testimonials-list">
@@ -43,7 +43,7 @@ function Testimonials() {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

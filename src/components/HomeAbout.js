@@ -3,7 +3,7 @@ import AboutImg2 from '../assets/mario_adrian_a.jpg';
 
 function HomeAbout() {
     return(
-        <div className="home-about">
+        <section className="home-about">
             <div className="container">
                     <div className="about-content">
                     <h1>Little Lemon</h1>
@@ -19,7 +19,7 @@ function HomeAbout() {
                     <img src={AboutImg2} alt="Mario and Adrian" className="img-mario-adrian" />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
